@@ -59,3 +59,21 @@ function findArrMax(arr) {
   }
 }
 console.log(findArrMax(arr));
+
+//sort arr and calculate sum of second smallest number and third largest number
+let arrS = [1, 5, 2, 8, 2, 6];
+function sortArr(arr) {
+  for (let i = 0; i < arrS.length; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[i] < arr[j]) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  let sum = arr[1] + arr[arr.length - 3];
+  return sum
+}
+
+console.log(sortArr(arrS));
